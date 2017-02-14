@@ -61,7 +61,7 @@ usage() {
 while [ $# -ge 1 ]; do
     case $1 in
         debug)
-            exec /bin/bash
+            exec /bin/sh
             ;;
         --help)
             usage
