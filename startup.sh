@@ -117,7 +117,7 @@ LOG=${SUBSONIC_HOME}/subsonic_sh.log
 truncate -s0 ${LOG}
 
     
-cd /var/subsonic
+cd /usr/share/subsonic
 
 exec /usr/bin/java -Xmx${SUBSONIC_MAX_MEMORY}m \
     -Dsubsonic.home=${SUBSONIC_HOME} \
