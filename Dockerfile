@@ -7,7 +7,7 @@ ENV SUBSONIC_UID=10000
 ENV SUBSONIC_GID=10000
 ENV SUBSONIC_HOME=/usr/share/subsonic
 ENV SUBSONIC_DATA=/var/subsonic
-ENV SUBSONIC_VERSION 6.1.3
+ENV SUBSONIC_VERSION 6.1.4
 
 # Add subsonic tar.gz
 ADD https://sourceforge.net/projects/subsonic/files/subsonic/${SUBSONIC_VERSION}/subsonic-${SUBSONIC_VERSION}-standalone.tar.gz/download /tmp/subsonic.tar.gz
