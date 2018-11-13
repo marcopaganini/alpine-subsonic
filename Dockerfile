@@ -32,8 +32,8 @@ RUN mkdir $SUBSONIC_DATA && \
     chown subsonic $SUBSONIC_DATA && \
     chmod 0770 $SUBSONIC_DATA
 
-# Install java7, ffmpeg, lame & friends.
-RUN apk --update add openjdk7-jre ffmpeg
+# Install java8, ffmpeg, lame & friends.
+RUN apk --update add openjdk8-jre ffmpeg
 
 # Create hardlinks to the transcoding binaries so we can mount a volume
 # over $SUBSONIC_DATA. If you mount a volume over $SUBSONIC_DATA, create
