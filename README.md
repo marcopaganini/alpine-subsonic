@@ -29,8 +29,8 @@ $ docker pull mpaganini/alpine-subsonic
 It is also possible to build your own image:
 
 ```shell
-  $ git clone http://github.com/marcopaganini/alpine-docker-image.git
-  $ cd alpine-docker-image
+  $ git clone http://github.com/marcopaganini/alpine-subsonic.git
+  $ cd alpine-subsonic
   $ ./build.sh
 ```
 
