@@ -14,15 +14,20 @@ ADD https://sourceforge.net/projects/subsonic/files/subsonic/${SUBSONIC_VERSION}
 
 # - Create a new group 'subsonic' with SUBSONIC_GID, home $SUBSONIC_HOME
 # - Create user 'subsonic' with SUBSONIC_UID, add to that group.
+# - Create $SUBSONIC_BIN
 # - Create $SUBSONIC_HOME
-# - Untar the subsonic tar file into $SUBSONIC_HOME
+# - Untar the subsonic tar file into $SUBSONIC_BIN
+# - Set permissions of $SUBSONIC_BIN
 # - Set permissions of $SUBSONIC_HOME
 RUN addgroup -g $SUBSONIC_GID subsonic && \
     adduser -D -H -h $SUBSONIC_HOME -u $SUBSONIC_UID -G subsonic -g "Subsonic User" subsonic && \
+    mkdir -p $SUBSONIC_BIN && \
     mkdir -p $SUBSONIC_HOME && \
-    tar zxvf /tmp/subsonic.tar.gz -C $SUBSONIC_HOME && \
+    tar zxvf /tmp/subsonic.tar.gz -C $SUBSONIC_BIN && \
     rm -f /tmp/*.tar.gz && \
+    chown subsonic $SUBSONIC_BIN && \
     chown subsonic $SUBSONIC_HOME && \
+    chmod 0770 $SUBSONIC_BIN && \
     chmod 0770 $SUBSONIC_HOME
 
 # Create subsonic data directory ($SUBSONIC_DATA). This is where subsonic stores

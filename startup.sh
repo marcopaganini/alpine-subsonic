@@ -116,8 +116,8 @@ mkdir -p \
 LOG=${SUBSONIC_HOME}/subsonic_sh.log
 truncate -s0 ${LOG}
 
-    
-cd /usr/share/subsonic
+
+cd $SUBSONIC_BIN
 
 exec /usr/bin/java -Xmx${SUBSONIC_MAX_MEMORY}m \
     -Dsubsonic.home=${SUBSONIC_HOME} \
